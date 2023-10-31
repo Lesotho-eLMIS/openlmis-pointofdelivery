@@ -12,10 +12,10 @@ All other dependencies, such as Java, are delivered automatically via the Docker
 1. Fork/clone this repository from GitHub.
 
  ```shell
- git clone https://github.com/OpenLMIS/openlmis-template-service.git <openlmis-your-service-name>
+ git clone https://github.com/OpenLMIS/openlmis-pointofdelivery.git <openlmis-your-service-name>
  ```
-2. Respectively change all instances of `openlmis-template-service` and
-`template-service` within the project to `openlmis-your-service-name` and
+2. Respectively change all instances of `openlmis-pointofdelivery` and
+`pointofdelivery` within the project to `openlmis-your-service-name` and
 `your-service-name`.
 3. Change all instances of the default version number ("0.0.1") in the project to your
 version number.
@@ -162,7 +162,7 @@ compose instructions have been provided to demonstrate this.
 4. Run the command below.
 
 ```shell
-> docker-compose -f docker-compose.builder.yml run --service-ports template-service
+> docker-compose -f docker-compose.builder.yml run --service-ports pointofdelivery
 ```
 
 ### <a name="internationalization">Internationalization (i18n)</a>

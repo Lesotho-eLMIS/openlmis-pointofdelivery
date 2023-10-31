@@ -7,7 +7,7 @@ protocols: [ HTTP, HTTPS ]
 
 documentation:
 - title: Getting Started
-  content: Welcome to the OpenLMIS template-service documentation. This minimal API is intended for illustrative purposes.
+  content: Welcome to the OpenLMIS pointofdelivery documentation. This minimal API is intended for illustrative purposes.
 
 schemas:
 - auditLogEntry: !include schemas/auditLogEntry.json

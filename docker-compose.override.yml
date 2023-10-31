@@ -1,6 +1,6 @@
 version: "2"
 services:
-  template-service:
+  pointofdelivery:
     image: openlmis/dev:6
     ports:
       - "5005:5005"
