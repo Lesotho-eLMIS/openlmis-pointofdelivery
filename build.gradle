@@ -87,7 +87,7 @@ flyway {
     url = "$System.env.DATABASE_URL"
     user = "$System.env.POSTGRES_USER"
     password = "$System.env.POSTGRES_PASSWORD"
-    schemas = ['template']
+    schemas = ['pointofdelivery']
     sqlMigrationPrefix = ''
     placeholderPrefix = '#['
     placeholderSuffix = ']'
@@ -177,7 +177,7 @@ sonarqube {
         if (branch && branch != 'master') {
             property "sonar.branch", branch
         }
-        property "sonar.projectName", "OpenLMIS Template Service"
+        property "sonar.projectName", "OpenLMIS Point Of Delivery Service"
         property "sonar.projectKey", "org.sonarqube:$rootProject.name"
         property "sonar.host.url", "http://sonar.openlmis.org"
         property "sonar.login", System.getenv("SONAR_LOGIN")
