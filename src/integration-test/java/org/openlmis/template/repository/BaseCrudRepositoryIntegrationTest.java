@@ -13,20 +13,19 @@
  * http://www.gnu.org/licenses.  For additional information contact info@OpenLMIS.org.
  */
 
-package org.openlmis.template.repository;
+package org.openlmis.pointofdelivery.repository;
 
 import java.util.UUID;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.openlmis.template.domain.BaseEntity;
+import org.openlmis.pointofdelivery.domain.BaseEntity;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
-
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -38,6 +37,7 @@ public abstract class BaseCrudRepositoryIntegrationTest<T extends BaseEntity> {
 
   /*
    * Generate a unique instance of given type.
+   * 
    * @return generated instance
    */
   abstract T generateInstance();

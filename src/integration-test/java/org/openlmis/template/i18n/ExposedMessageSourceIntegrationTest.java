@@ -13,7 +13,7 @@
  * http://www.gnu.org/licenses.  For additional information contact info@OpenLMIS.org.
  */
 
-package org.openlmis.template.i18n;
+package org.openlmis.pointofdelivery.i18n;
 
 import static java.lang.reflect.Modifier.isFinal;
 import static java.lang.reflect.Modifier.isPublic;
@@ -56,12 +56,10 @@ public class ExposedMessageSourceIntegrationTest {
     for (String key : all) {
       assertThat(
           "Missing constant value for key: " + key,
-          constantValues.contains(key), is(true)
-      );
+          constantValues.contains(key), is(true));
       assertThat(
           "Missing property entry in messages.properties for key: " + key,
-          propertyKeys.contains(key), is(true)
-      );
+          propertyKeys.contains(key), is(true));
     }
   }
 

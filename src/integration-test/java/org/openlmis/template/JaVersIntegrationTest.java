@@ -13,7 +13,7 @@
  * http://www.gnu.org/licenses.  For additional information contact info@OpenLMIS.org.
  */
 
-package org.openlmis.template;
+package org.openlmis.pointofdelivery;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -31,7 +31,7 @@ import org.junit.After;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.openlmis.template.domain.Widget;
+import org.openlmis.pointofdelivery.domain.Widget;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -62,12 +62,12 @@ public class JaVersIntegrationTest {
   @Test
   public void shouldAlwaysCommitWithUtcTimeZone() {
 
-    //given
+    // given
     Widget widget = new Widget();
     widget.setId(UUID.randomUUID());
     widget.setName("name_1");
 
-    //when
+    // when
     DateTimeZone.setDefault(DateTimeZone.forID("UTC"));
     javers.commit(COMMIT_AUTHOR, widget);
 
@@ -75,7 +75,7 @@ public class JaVersIntegrationTest {
     widget.setName("name_2");
     javers.commit(COMMIT_AUTHOR, widget);
 
-    //then
+    // then
     List<CdoSnapshot> snapshots = javers.findSnapshots(
         QueryBuilder.byClass(Widget.class).build());
     assertEquals(2, snapshots.size());

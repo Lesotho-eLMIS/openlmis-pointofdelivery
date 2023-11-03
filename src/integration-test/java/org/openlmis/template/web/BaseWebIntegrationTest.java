@@ -13,7 +13,7 @@
  * http://www.gnu.org/licenses.  For additional information contact info@OpenLMIS.org.
  */
 
-package org.openlmis.template.web;
+package org.openlmis.pointofdelivery.web;
 
 import static com.github.tomakehurst.wiremock.client.WireMock.aResponse;
 import static com.github.tomakehurst.wiremock.client.WireMock.equalTo;
@@ -36,9 +36,9 @@ import org.junit.Rule;
 import org.junit.runner.RunWith;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
-import org.openlmis.template.domain.BaseEntity;
-import org.openlmis.template.repository.WidgetRepository;
-import org.openlmis.template.util.Pagination;
+import org.openlmis.pointofdelivery.domain.BaseEntity;
+import org.openlmis.pointofdelivery.repository.WidgetRepository;
+import org.openlmis.pointofdelivery.util.Pagination;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -53,7 +53,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @ActiveProfiles("test")
-@SuppressWarnings({"PMD.TooManyMethods"})
+@SuppressWarnings({ "PMD.TooManyMethods" })
 public abstract class BaseWebIntegrationTest {
 
   private static final String USER_ACCESS_TOKEN = "418c89c5-7f21-4cd1-a63a-38c47892b0fe";
@@ -68,8 +68,8 @@ public abstract class BaseWebIntegrationTest {
 
   RestAssuredClient restAssured;
 
-  private static final RamlDefinition ramlDefinition =
-      RamlLoaders.fromClasspath().load("api-definition-raml.yaml").ignoringXheaders();
+  private static final RamlDefinition ramlDefinition = RamlLoaders.fromClasspath().load("api-definition-raml.yaml")
+      .ignoringXheaders();
 
   private static final String MOCK_USER_CHECK_RESULT = "{\n"
       + "  \"aud\": [\n"
@@ -144,7 +144,8 @@ public abstract class BaseWebIntegrationTest {
   }
 
   /**
-   * Initialize the REST Assured client. Done here and not in the constructor, so that randomPort is
+   * Initialize the REST Assured client. Done here and not in the constructor, so
+   * that randomPort is
    * available.
    */
   @PostConstruct
@@ -152,14 +153,14 @@ public abstract class BaseWebIntegrationTest {
     RestAssured.baseURI = baseUri;
     RestAssured.port = randomPort;
     RestAssured.config = RestAssuredConfig.config().objectMapperConfig(
-        new ObjectMapperConfig().jackson2ObjectMapperFactory((clazz, charset) -> objectMapper)
-    );
+        new ObjectMapperConfig().jackson2ObjectMapperFactory((clazz, charset) -> objectMapper));
     RestAssured.enableLoggingOfRequestAndResponseIfValidationFails();
     restAssured = ramlDefinition.createRestAssured();
   }
 
   /**
-   * Get a user access token. An arbitrary UUID string is returned and the tests assume it is a
+   * Get a user access token. An arbitrary UUID string is returned and the tests
+   * assume it is a
    * valid one for an admin user.
    *
    * @return an access token
@@ -169,8 +170,10 @@ public abstract class BaseWebIntegrationTest {
   }
 
   /**
-   * Get a trusted client access token. An arbitrary UUID string is returned and the tests assume it
-   * is a valid one for a trusted client. This is for service-to-service communication.
+   * Get a trusted client access token. An arbitrary UUID string is returned and
+   * the tests assume it
+   * is a valid one for a trusted client. This is for service-to-service
+   * communication.
    *
    * @return an access token
    */

@@ -13,7 +13,7 @@
  * http://www.gnu.org/licenses.  For additional information contact info@OpenLMIS.org.
  */
 
-package org.openlmis.template;
+package org.openlmis.pointofdelivery;
 
 import static org.mockito.Matchers.any;
 import static org.mockito.Matchers.eq;
@@ -37,8 +37,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
-import org.openlmis.template.domain.Widget;
-import org.openlmis.template.repository.WidgetRepository;
+import org.openlmis.pointofdelivery.domain.Widget;
+import org.openlmis.pointofdelivery.repository.WidgetRepository;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 import org.springframework.context.ApplicationContext;
@@ -48,7 +48,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
 @RunWith(PowerMockRunner.class)
-@PrepareForTest({CdoSnapshot.class})
+@PrepareForTest({ CdoSnapshot.class })
 public class AuditLogInitializerTest {
 
   @Mock

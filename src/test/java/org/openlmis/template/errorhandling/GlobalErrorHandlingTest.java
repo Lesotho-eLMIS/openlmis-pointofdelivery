@@ -13,7 +13,7 @@
  * http://www.gnu.org/licenses.  For additional information contact info@OpenLMIS.org.
  */
 
-package org.openlmis.template.errorhandling;
+package org.openlmis.pointofdelivery.errorhandling;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Matchers.any;
@@ -27,12 +27,12 @@ import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
-import org.openlmis.template.exception.NotFoundException;
-import org.openlmis.template.exception.ValidationMessageException;
-import org.openlmis.template.i18n.MessageKeys;
-import org.openlmis.template.i18n.MessageService;
-import org.openlmis.template.util.Message;
-import org.openlmis.template.util.Message.LocalizedMessage;
+import org.openlmis.pointofdelivery.exception.NotFoundException;
+import org.openlmis.pointofdelivery.exception.ValidationMessageException;
+import org.openlmis.pointofdelivery.i18n.MessageKeys;
+import org.openlmis.pointofdelivery.i18n.MessageService;
+import org.openlmis.pointofdelivery.util.Message;
+import org.openlmis.pointofdelivery.util.Message.LocalizedMessage;
 import org.springframework.context.MessageSource;
 import org.springframework.dao.DataIntegrityViolationException;
 

@@ -13,14 +13,14 @@
  * http://www.gnu.org/licenses.  For additional information contact info@OpenLMIS.org.
  */
 
-package org.openlmis.template.repository;
+package org.openlmis.pointofdelivery.repository;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.UUID;
 import org.junit.Test;
-import org.openlmis.template.WidgetDataBuilder;
-import org.openlmis.template.domain.Widget;
+import org.openlmis.pointofdelivery.WidgetDataBuilder;
+import org.openlmis.pointofdelivery.domain.Widget;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.repository.CrudRepository;

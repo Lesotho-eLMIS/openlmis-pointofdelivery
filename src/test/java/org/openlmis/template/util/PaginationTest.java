@@ -13,7 +13,7 @@
  * http://www.gnu.org/licenses.  For additional information contact info@OpenLMIS.org.
  */
 
-package org.openlmis.template.util;
+package org.openlmis.pointofdelivery.util;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -46,7 +46,6 @@ public class PaginationTest {
     assertThat(pagedListContent.get(2)).isEqualTo(5);
   }
 
-
   @Test
   public void getPageReturnsEmptyResultIfSpecifiedPageNumberIsOutOfBounds() {
     int page = Integer.MAX_VALUE;
@@ -58,7 +57,6 @@ public class PaginationTest {
     List<Integer> pagedListContent = pagedList.getContent();
     assertThat(pagedListContent.size()).isEqualTo(0);
   }
-
 
   @Test
   public void getPageReturnsAllValuesEvenWhenSizeIsOutOfBounds() {

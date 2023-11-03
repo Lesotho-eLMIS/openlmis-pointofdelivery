@@ -13,7 +13,7 @@
  * http://www.gnu.org/licenses.  For additional information contact info@OpenLMIS.org.
  */
 
-package org.openlmis.template;
+package org.openlmis.pointofdelivery;
 
 import static org.mockito.Mockito.verify;
 
@@ -23,7 +23,7 @@ import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
-import org.openlmis.template.util.Resource2Db;
+import org.openlmis.pointofdelivery.util.Resource2Db;
 import org.springframework.core.io.Resource;
 
 @RunWith(MockitoJUnitRunner.class)

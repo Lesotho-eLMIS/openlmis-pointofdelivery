@@ -13,7 +13,7 @@
  * http://www.gnu.org/licenses.  For additional information contact info@OpenLMIS.org.
  */
 
-package org.openlmis.template.util;
+package org.openlmis.pointofdelivery.util;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -53,7 +53,7 @@ public class Resource2DbTest {
     Resource resource = mock(Resource.class);
     InputStream inputStream = spy(IOUtils.toInputStream("some data"));
     when(resource.getInputStream()).thenReturn(inputStream);
-    when(template.batchUpdate(any(String.class))).thenReturn(new int[]{1});
+    when(template.batchUpdate(any(String.class))).thenReturn(new int[] { 1 });
 
     // when
     resource2Db.updateDbFromSql(resource);
@@ -69,7 +69,7 @@ public class Resource2DbTest {
     Resource resource = mock(Resource.class);
     InputStream inputStream = spy(IOUtils.toInputStream("some data"));
     when(resource.getInputStream()).thenReturn(inputStream);
-    when(template.batchUpdate(any(String.class), any(List.class))).thenReturn(new int[]{1});
+    when(template.batchUpdate(any(String.class), any(List.class))).thenReturn(new int[] { 1 });
 
     // when
     resource2Db.insertToDbFromCsv("sometable", resource);
@@ -114,12 +114,12 @@ public class Resource2DbTest {
     // when
     resource2Db.resourceCsvToBatchedPair(resource);
   }
-  
+
   @Test
   public void updateDbFromSqlStringsShouldReturnWithoutUpdateIfNoSqlLines() {
     // when
     resource2Db.updateDbFromSqlStrings(Collections.emptyList());
-    
+
     // then
     verify(template, times(0)).batchUpdate(any(String.class));
   }

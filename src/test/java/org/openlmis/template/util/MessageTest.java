@@ -13,7 +13,7 @@
  * http://www.gnu.org/licenses.  For additional information contact info@OpenLMIS.org.
  */
 
-package org.openlmis.template.util;
+package org.openlmis.pointofdelivery.util;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
@@ -25,7 +25,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
-import org.openlmis.template.util.Message.LocalizedMessage;
+import org.openlmis.pointofdelivery.util.Message.LocalizedMessage;
 import org.springframework.context.MessageSource;
 import org.springframework.context.NoSuchMessageException;
 
@@ -54,7 +54,7 @@ public class MessageTest {
     String p2 = "stuff";
     Message msg = new Message(key, p1, p2);
 
-    when(messageSource.getMessage(key, new Object[]{p1, p2}, LOCALE))
+    when(messageSource.getMessage(key, new Object[] { p1, p2 }, LOCALE))
         .thenThrow(NoSuchMessageException.class);
     msg.localMessage(messageSource, LOCALE);
   }
@@ -67,7 +67,7 @@ public class MessageTest {
     String p2 = "stuff";
     Message msg = new Message(key, p1, p2);
 
-    when(messageSource.getMessage(key, new Object[]{p1, p2}, LOCALE)).thenReturn(value);
+    when(messageSource.getMessage(key, new Object[] { p1, p2 }, LOCALE)).thenReturn(value);
     LocalizedMessage localizedMessage = msg.localMessage(messageSource, LOCALE);
 
     assertThat(localizedMessage.asMessage()).isEqualTo(value);
@@ -80,7 +80,7 @@ public class MessageTest {
     Date today = new Date();
     Message message = new Message(key, "a", today);
 
-    // expected is:  "key.something: a, <date>"
+    // expected is: "key.something: a, <date>"
     assertEquals(key + ": " + "a" + ", " + today.toString(), message.toString());
   }
 

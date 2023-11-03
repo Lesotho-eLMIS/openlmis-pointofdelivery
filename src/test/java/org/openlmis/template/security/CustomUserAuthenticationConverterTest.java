@@ -13,13 +13,13 @@
  * http://www.gnu.org/licenses.  For additional information contact info@OpenLMIS.org.
  */
 
-package org.openlmis.template.security;
+package org.openlmis.pointofdelivery.security;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.mock;
-import static org.openlmis.template.security.CustomUserAuthenticationConverter.REFERENCE_DATA_USER_ID;
+import static org.openlmis.pointofdelivery.security.CustomUserAuthenticationConverter.REFERENCE_DATA_USER_ID;
 
 import com.google.common.collect.ImmutableMap;
 import java.util.Arrays;
@@ -88,8 +88,7 @@ public class CustomUserAuthenticationConverterTest {
 
   @Test
   public void shouldReturnNullWhenMapDoesNotContainPrincipal() {
-    Authentication authentication =
-        userAuthenticationConverter.extractAuthentication(Collections.emptyMap());
+    Authentication authentication = userAuthenticationConverter.extractAuthentication(Collections.emptyMap());
 
     assertNull(authentication);
   }

@@ -13,11 +13,11 @@
  * http://www.gnu.org/licenses.  For additional information contact info@OpenLMIS.org.
  */
 
-package org.openlmis.template;
+package org.openlmis.pointofdelivery;
 
 import java.util.UUID;
 import org.apache.commons.lang.RandomStringUtils;
-import org.openlmis.template.domain.Widget;
+import org.openlmis.pointofdelivery.domain.Widget;
 
 public class WidgetDataBuilder {
   private UUID id = UUID.randomUUID();

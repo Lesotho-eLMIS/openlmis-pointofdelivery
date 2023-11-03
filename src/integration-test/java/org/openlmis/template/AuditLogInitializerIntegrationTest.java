@@ -13,7 +13,7 @@
  * http://www.gnu.org/licenses.  For additional information contact info@OpenLMIS.org.
  */
 
-package org.openlmis.template;
+package org.openlmis.pointofdelivery;
 
 import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.instanceOf;
@@ -33,7 +33,7 @@ import org.javers.core.metamodel.object.InstanceId;
 import org.javers.repository.jql.QueryBuilder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.openlmis.template.domain.Widget;
+import org.openlmis.pointofdelivery.domain.Widget;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
@@ -43,7 +43,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
 @Transactional
-@ActiveProfiles({"test", "init-audit-log"})
+@ActiveProfiles({ "test", "init-audit-log" })
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 public class AuditLogInitializerIntegrationTest {
@@ -55,8 +55,7 @@ public class AuditLogInitializerIntegrationTest {
   private static final String INSERT_WIDGET_SQL = String.format(
       "INSERT INTO template.widget (%s) VALUES (%s) ",
       StringUtils.join(WIDGET_FIELDS, ", "),
-      StringUtils.repeat("?", ", ", WIDGET_FIELDS.length)
-  );
+      StringUtils.repeat("?", ", ", WIDGET_FIELDS.length));
 
   @Autowired
   private ApplicationContext applicationContext;
@@ -69,11 +68,11 @@ public class AuditLogInitializerIntegrationTest {
 
   @Test
   public void shouldCreateSnapshotForWidget() {
-    //given
+    // given
     UUID widgetId = UUID.randomUUID();
     addWidget(widgetId);
 
-    //when
+    // when
     QueryBuilder jqlQuery = QueryBuilder.byInstanceId(widgetId, Widget.class);
     List<CdoSnapshot> snapshots = javers.findSnapshots(jqlQuery.build());
 

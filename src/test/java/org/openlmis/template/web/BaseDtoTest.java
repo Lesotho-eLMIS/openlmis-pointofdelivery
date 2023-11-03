@@ -13,13 +13,13 @@
  * http://www.gnu.org/licenses.  For additional information contact info@OpenLMIS.org.
  */
 
-package org.openlmis.template.web;
+package org.openlmis.pointofdelivery.web;
 
 import nl.jqno.equalsverifier.EqualsVerifier;
 import nl.jqno.equalsverifier.Warning;
 import org.junit.Test;
-import org.openlmis.template.ToStringTestUtils;
-import org.openlmis.template.web.widget.WidgetDto;
+import org.openlmis.pointofdelivery.ToStringTestUtils;
+import org.openlmis.pointofdelivery.web.widget.WidgetDto;
 
 public class BaseDtoTest {
 
@@ -34,9 +34,9 @@ public class BaseDtoTest {
 
   @Test
   public void shouldImplementToString() {
-    BaseDto baseDto = new BaseDto() {};
+    BaseDto baseDto = new BaseDto() {
+    };
     ToStringTestUtils.verify(BaseDto.class, baseDto);
   }
-
 
 }

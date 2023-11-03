@@ -13,12 +13,12 @@
  * http://www.gnu.org/licenses.  For additional information contact info@OpenLMIS.org.
  */
 
-package org.openlmis.template.domain;
+package org.openlmis.pointofdelivery.domain;
 
 import nl.jqno.equalsverifier.EqualsVerifier;
 import nl.jqno.equalsverifier.Warning;
 import org.junit.Test;
-import org.openlmis.template.ToStringTestUtils;
+import org.openlmis.pointofdelivery.ToStringTestUtils;
 
 public class BaseEntityTest {
 
@@ -33,9 +33,9 @@ public class BaseEntityTest {
 
   @Test
   public void shouldImplementToString() {
-    BaseEntity base = new BaseEntity() {};
+    BaseEntity base = new BaseEntity() {
+    };
     ToStringTestUtils.verify(BaseEntity.class, base, "UUID_TYPE");
   }
-
 
 }

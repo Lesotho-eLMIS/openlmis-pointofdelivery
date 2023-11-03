@@ -13,7 +13,7 @@
  * http://www.gnu.org/licenses.  For additional information contact info@OpenLMIS.org.
  */
 
-package org.openlmis.template.security;
+package org.openlmis.pointofdelivery.security;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -29,11 +29,10 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 @RunWith(MockitoJUnitRunner.class)
 public class ResourceServerSecurityConfigurationTest {
 
-  private static final String[] ALLOWED_ORIGINS = new String[]{"http://test.openlmis.org"};
-  private static final String[] ALLOWED_METHODS = new String[]{"GET"};
+  private static final String[] ALLOWED_ORIGINS = new String[] { "http://test.openlmis.org" };
+  private static final String[] ALLOWED_METHODS = new String[] { "GET" };
 
-  private ResourceServerSecurityConfiguration configuration =
-      new ResourceServerSecurityConfiguration();
+  private ResourceServerSecurityConfiguration configuration = new ResourceServerSecurityConfiguration();
 
   @Test
   public void shouldCreateEmptyCorsConfigurationSourceBean() {
@@ -42,8 +41,7 @@ public class ResourceServerSecurityConfigurationTest {
     CorsConfigurationSource corsConfigurationSource = configuration.corsConfigurationSource();
     assertThat(corsConfigurationSource).isInstanceOf(UrlBasedCorsConfigurationSource.class);
 
-    UrlBasedCorsConfigurationSource urlBasedCorsConfigurationSource =
-        (UrlBasedCorsConfigurationSource) corsConfigurationSource;
+    UrlBasedCorsConfigurationSource urlBasedCorsConfigurationSource = (UrlBasedCorsConfigurationSource) corsConfigurationSource;
 
     Map<String, CorsConfiguration> map = urlBasedCorsConfigurationSource
         .getCorsConfigurations();
@@ -59,8 +57,7 @@ public class ResourceServerSecurityConfigurationTest {
     CorsConfigurationSource corsConfigurationSource = configuration.corsConfigurationSource();
     assertThat(corsConfigurationSource).isInstanceOf(UrlBasedCorsConfigurationSource.class);
 
-    UrlBasedCorsConfigurationSource urlBasedCorsConfigurationSource =
-        (UrlBasedCorsConfigurationSource) corsConfigurationSource;
+    UrlBasedCorsConfigurationSource urlBasedCorsConfigurationSource = (UrlBasedCorsConfigurationSource) corsConfigurationSource;
 
     Map<String, CorsConfiguration> map = urlBasedCorsConfigurationSource
         .getCorsConfigurations();

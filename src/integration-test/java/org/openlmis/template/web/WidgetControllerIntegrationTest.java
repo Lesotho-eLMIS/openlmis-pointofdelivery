@@ -13,7 +13,7 @@
  * http://www.gnu.org/licenses.  For additional information contact info@OpenLMIS.org.
  */
 
-package org.openlmis.template.web;
+package org.openlmis.pointofdelivery.web;
 
 import static org.hamcrest.Matchers.hasItem;
 import static org.hamcrest.Matchers.hasSize;
@@ -44,11 +44,11 @@ import org.javers.repository.jql.JqlQuery;
 import org.joda.time.LocalDateTime;
 import org.junit.Before;
 import org.junit.Test;
-import org.openlmis.template.WidgetDataBuilder;
-import org.openlmis.template.domain.Widget;
-import org.openlmis.template.i18n.MessageKeys;
-import org.openlmis.template.web.widget.WidgetController;
-import org.openlmis.template.web.widget.WidgetDto;
+import org.openlmis.pointofdelivery.WidgetDataBuilder;
+import org.openlmis.pointofdelivery.domain.Widget;
+import org.openlmis.pointofdelivery.i18n.MessageKeys;
+import org.openlmis.pointofdelivery.web.widget.WidgetController;
+import org.openlmis.pointofdelivery.web.widget.WidgetDto;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
@@ -216,7 +216,8 @@ public class WidgetControllerIntegrationTest extends BaseWebIntegrationTest {
     String widgetJson = "{\"code\":\"" + widgetDto.getCode() + "\",\"name\":\""
         + widgetDto.getName() + "\"}";
     Map<String, String> widgetMap = new ObjectMapper().readValue(widgetJson,
-        new TypeReference<Map<String, String>>() {});
+        new TypeReference<Map<String, String>>() {
+        });
     UUID pathId = UUID.randomUUID();
     given(widgetRepository.findById(pathId)).willReturn(Optional.empty());
 

@@ -13,7 +13,7 @@
  * http://www.gnu.org/licenses.  For additional information contact info@OpenLMIS.org.
  */
 
-package org.openlmis.template;
+package org.openlmis.pointofdelivery;
 
 import static org.flywaydb.core.api.callback.Event.AFTER_MIGRATE;
 import static org.flywaydb.core.api.callback.Event.BEFORE_MIGRATE;

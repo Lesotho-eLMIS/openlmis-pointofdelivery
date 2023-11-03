@@ -13,12 +13,12 @@
  * http://www.gnu.org/licenses.  For additional information contact info@OpenLMIS.org.
  */
 
-package org.openlmis.template.web.widget;
+package org.openlmis.pointofdelivery.web.widget;
 
 import nl.jqno.equalsverifier.EqualsVerifier;
 import nl.jqno.equalsverifier.Warning;
 import org.junit.Test;
-import org.openlmis.template.ToStringTestUtils;
+import org.openlmis.pointofdelivery.ToStringTestUtils;
 
 public class WidgetDtoTest {
 
